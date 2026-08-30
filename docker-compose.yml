@@ -1,0 +1,36 @@
+# Démarrage rapide en local ou sur un VPS : docker compose up -d
+# Puis, une seule fois : docker compose exec app npm run migrate && docker compose exec app npm run seed
+version: "3.8"
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: preventisassur
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_DB: preventisassur
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://preventisassur:changeme@db:5432/preventisassur
+      JWT_SECRET: change-this-to-a-long-random-string
+      NODE_ENV: production
+      PORT: 3000
+      SEED_ADMIN_USERNAME: admin
+      SEED_ADMIN_PASSWORD: change-this-password
+      SEED_ADMIN_NAME: Direction Preventisassur
+    ports:
+      - "3000:3000"
+
+volumes:
+  db_data:
