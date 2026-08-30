@@ -18,7 +18,7 @@ const IMG = {
 const TR = {
   fr:{
     nav_home:'Accueil', nav_services:'Nos garanties', nav_trust:'Le cabinet', nav_contact:'Contact',
-    nav_client:'Demander un devis', nav_staff:'Espace employés', learn_more:'En savoir plus',
+    nav_client:'Demander un devis', nav_staff:'Espace employés', learn_more:'En savoir plus',    nav_client:'Demander un devis', nav_staff:'Espace employés', learn_more:'En savoir plus', show_password:'Afficher', hide_password:'Masquer',
     hero_eyebrow:'Cabinet de courtage indépendant',
     hero_title:'Chaque protection commence par un dossier bien tenu.',
     hero_lead:"Preventisassur compare, négocie et suit votre dossier d'assurance — santé, habitation, auto, moto, mutuelle professionnelle, IARD ou RC décennale — du premier échange jusqu'à la signature de votre contrat.",
@@ -109,7 +109,7 @@ const TR = {
   },
   en:{
     nav_home:'Home', nav_services:'Cover', nav_trust:'The firm', nav_contact:'Contact',
-    nav_client:'Get a quote', nav_staff:'Staff portal', learn_more:'Learn more',
+    nav_client:'Get a quote', nav_staff:'Staff portal', learn_more:'Learn more',    nav_client:'Get a quote', nav_staff:'Staff portal', learn_more:'Learn more', show_password:'Show', hide_password:'Hide',
     hero_eyebrow:'Independent brokerage firm',
     hero_title:'Every policy starts with a well-kept file.',
     hero_lead:'Preventisassur compares, negotiates and follows your insurance file — health, home, motor, motorcycle, professional group cover, IARD or ten-year builder liability — from the first contact to the signed policy.',
@@ -508,7 +508,12 @@ async function sendChatMessage(){
     showToast(typeof err==='string' ? err : "Erreur lors de l'envoi du message.");
   }
 }
-
+function togglePasswordVisibility(id, btn){
+  const input = document.getElementById(id);
+  if(!input) return;
+  if(input.type === 'password'){ input.type = 'text'; btn.textContent = L('hide_password'); }
+  else { input.type = 'password'; btn.textContent = L('show_password'); }
+}
 function toggleAddEmployee(show){ state.dash.showAddEmployee = show; render(); }
 
 async function submitNewEmployee(){
@@ -897,11 +902,16 @@ function viewLogin(){
         <div class="eyebrow">${L('nav_staff')}</div>
         <h2>${L('login_title')}</h2>
         <p style="margin-bottom:22px;">${L('login_lead')}</p>
-        <div class="demo-hint">${L('demo_hint')}</div>
+        
         ${state.loginError ? `<div class="hint" style="color:#8C3B2E;margin-bottom:14px;">${L('login_error')}</div>` : ''}
         <form onsubmit="attemptLogin(event)">
           <div class="field"><label>${L('f_username')}</label><input type="text" id="loginUser" required></div>
-          <div class="field"><label>${L('f_password')}</label><input type="password" id="loginPass" required></div>
+                    <div class="field"><label>${L('f_password')}</label>
+            <div style="position:relative;">
+              <input type="password" id="loginPass" required style="padding-right:74px;">
+              <button type="button" class="btn-ghost" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;padding:4px 6px;" onclick="togglePasswordVisibility('loginPass', this)">${L('show_password')}</button>
+            </div>
+          </div>
           <button class="btn btn-primary btn-block" type="submit">${L('btn_login')}</button>
         </form>
       </div>
@@ -1020,7 +1030,12 @@ function viewDashboard(){
           <div class="field"><label>${L('f_username')}</label><input type="text" id="new_emp_username" autocomplete="off"></div>
         </div>
         <div class="field-row">
-          <div class="field"><label>${L('f_password')}</label><input type="password" id="new_emp_password" autocomplete="new-password"></div>
+                    <div class="field"><label>${L('f_password')}</label>
+            <div style="position:relative;">
+              <input type="password" id="new_emp_password" autocomplete="new-password" style="padding-right:74px;">
+              <button type="button" class="btn-ghost" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;padding:4px 6px;" onclick="togglePasswordVisibility('new_emp_password', this)">${L('show_password')}</button>
+            </div>
+          </div>
           <div class="field"><label>${L('f_role')}</label>
             <select id="new_emp_role">
               <option value="agent">${L('role_agent')}</option>
