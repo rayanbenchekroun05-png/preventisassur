@@ -215,7 +215,7 @@ let state = {
   memberSeq:0,
   dash:{ tab:'leads', filterStatus:'all', filterService:'all', showAddEmployee:false },
   chat:{ messages:[], loaded:false, pollHandle:null, draft:'', inputFocused:false },
-  activeLeadId:null,
+  leadsPollHandle:null,  activeLeadId:null,
   loginError:false,
   toast:null,
 };
@@ -237,7 +237,7 @@ async function checkSession(){
     if(state.user){
       await Promise.all([loadLeads(), state.user.role==='admin' ? loadEmployees() : Promise.resolve()]);
       if(state.view==='home' || state.view==='login'){ state.view = 'dashboard'; }
-    }
+      startLeadsPolling();    }
   }catch(e){ state.user = null; }
   state.sessionChecked = true;
   render();
@@ -318,7 +318,8 @@ function goQuoteForService(key){ state.quote = {step:1, coverageType:null, servi
 function goStaffLogin(){ state.loginError=false; goView('login'); }
 async function logout(){
   try{ await api('/auth/logout', {method:'POST'}); }catch(e){}
-  stopChatPolling();
+    stopChatPolling();
+  stopLeadsPolling();
   state.user=null; state.activeLeadId=null; state.leads=[]; state.employees=[]; state.leadsLoaded=false;
   goView('home');
 }
@@ -463,7 +464,7 @@ async function attemptLogin(e){
     await loadLeads();
     if(state.user.role==='admin'){ await loadEmployees(); }
     goView('dashboard');
-  } catch(err){
+    startLeadsPolling();  } catch(err){
     state.loginError = true;
     render();
   }
@@ -483,6 +484,13 @@ async function loadMessages(){
   }catch(e){ /* silent — polling errors shouldn't spam toasts */ }
   state.chat.loaded = true;
   if(state.dash.tab==='chat') render();
+}
+function startLeadsPolling(){
+  if(state.leadsPollHandle) return;
+  state.leadsPollHandle = setInterval(loadLeads, 10000);
+}
+function stopLeadsPolling(){
+  if(state.leadsPollHandle){ clearInterval(state.leadsPollHandle); state.leadsPollHandle = null; }
 }
 function startChatPolling(){
   if(state.chat.pollHandle) return;
@@ -1169,12 +1177,15 @@ function viewDashboard(){
 function render(){
   const app = document.getElementById('app');
 
-  // Capture whether the chat box is focused (and where the cursor is) BEFORE
-  // we replace the DOM below — checking this after the fact is unreliable,
-  // because removing a focused element fires its blur handler mid-replacement.
-  const chatWasFocused = document.activeElement && document.activeElement.id === 'chatInput';
-  const chatSelStart = chatWasFocused ? document.activeElement.selectionStart : null;
-  const chatSelEnd = chatWasFocused ? document.activeElement.selectionEnd : null;
+  // Preserve focus and cursor position across auto-refreshes, whatever field
+  // the user happens to be typing in (chat box, add-employee form, etc.) —
+  // checking this AFTER replacing the DOM is unreliable, since removing a
+  // focused element fires its blur handler mid-replacement.
+  const prevActive = document.activeElement;
+  const prevId = prevActive && prevActive.id ? prevActive.id : null;
+  const isTextInput = prevActive && (prevActive.tagName === 'INPUT' || prevActive.tagName === 'TEXTAREA');
+  const prevSelStart = isTextInput ? prevActive.selectionStart : null;
+  const prevSelEnd = isTextInput ? prevActive.selectionEnd : null;
 
   let html = '';
   if(state.view==='home') html = viewHome();
@@ -1188,16 +1199,19 @@ function render(){
 
   app.innerHTML = html;
 
+  if(prevId){
+    const el = document.getElementById(prevId);
+    if(el){
+      el.focus();
+      if(isTextInput && typeof prevSelStart === 'number'){
+        try{ el.setSelectionRange(prevSelStart, prevSelEnd); }catch(e){}
+      }
+    }
+  }
+
   if(state.view==='dashboard' && state.dash.tab==='chat'){
     const msgEl = document.getElementById('chatMessages');
     if(msgEl) msgEl.scrollTop = msgEl.scrollHeight;
-    if(chatWasFocused){
-      const inputEl = document.getElementById('chatInput');
-      if(inputEl){
-        inputEl.focus();
-        inputEl.setSelectionRange(chatSelStart, chatSelEnd);
-      }
-    }
   }
 }
 
