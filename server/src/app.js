@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth.routes');
 const leadsRoutes = require('./routes/leads.routes');
 const employeesRoutes = require('./routes/employees.routes');
 const messagesRoutes = require('./routes/messages.routes');
+const devicesRoutes = require('./routes/devices.routes');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/leads', leadsRoutes);
 app.use('/api/employees', employeesRoutes);
 app.use('/api/messages', messagesRoutes);
+app.use('/api/devices', devicesRoutes);
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 

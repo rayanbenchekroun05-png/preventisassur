@@ -5,8 +5,8 @@ if (!SECRET) {
   console.warn('⚠ JWT_SECRET manquant dans .env — utilise une valeur par défaut non sûre pour le développement uniquement.');
 }
 
-function signToken(payload) {
-  return jwt.sign(payload, SECRET || 'dev-secret-do-not-use-in-production', { expiresIn: '8h' });
+function signToken(payload, expiresIn) {
+  return jwt.sign(payload, SECRET || 'dev-secret-do-not-use-in-production', { expiresIn: expiresIn || '8h' });
 }
 
 function verifyToken(token) {

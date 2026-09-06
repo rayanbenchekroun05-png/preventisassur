@@ -125,7 +125,7 @@ section{padding:84px 0;}
 
 /* ===== Footer ===== */
 footer.site{background:var(--ink);color:#B9C4D1;padding:56px 0 30px;border-top:4px solid var(--brick);}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;}
 footer.site h4{color:#fff;font-size:14px;font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
 footer.site a{display:block;color:#B9C4D1;text-decoration:none;font-size:13.5px;margin-bottom:9px;}
 footer.site a:hover{color:#fff;}
@@ -280,3 +280,8 @@ table.leads tr.clickable:hover{background:var(--brick-tint);cursor:pointer;}
   color:#fff;font-family:var(--font-mono);font-weight:600;font-size:11px;letter-spacing:.16em;
   text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.5);
 }
+/* ===== Legal pages ===== */
+.legal-body h3{font-family:var(--font-display);font-size:18px;color:var(--ink);margin:28px 0 8px;}
+.legal-body h3:first-child{margin-top:0;}
+.legal-body p{font-size:14.5px;line-height:1.7;color:var(--text);margin:0 0 4px;}
+.legal-body a{color:var(--brick);text-decoration:underline;}

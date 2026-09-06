@@ -18,7 +18,7 @@ const IMG = {
 const TR = {
   fr:{
     nav_home:'Accueil', nav_services:'Nos garanties', nav_trust:'Le cabinet', nav_contact:'Contact',
-    nav_client:'Demander un devis', nav_staff:'Espace employés', learn_more:'En savoir plus',    nav_client:'Demander un devis', nav_staff:'Espace employés', learn_more:'En savoir plus', show_password:'Afficher', hide_password:'Masquer',
+    nav_client:'Demander un devis', nav_staff:'Espace employés', learn_more:'En savoir plus',
     hero_eyebrow:'Cabinet de courtage indépendant',
     hero_title:'Chaque protection commence par un dossier bien tenu.',
     hero_lead:"Preventisassur compare, négocie et suit votre dossier d'assurance — santé, habitation, auto, moto, mutuelle professionnelle, IARD ou RC décennale — du premier échange jusqu'à la signature de votre contrat.",
@@ -56,6 +56,49 @@ const TR = {
     foot_about:"Preventisassur est un cabinet de courtage en assurance indépendant, spécialisé en IARD et en responsabilité civile décennale.",
     foot_nav:'Navigation', foot_staff:'Accès professionnels', foot_staff_link:'Connexion employés',
     foot_legal:'Informations', foot_legal1:'Mentions légales', foot_legal2:'Politique de confidentialité', foot_legal3:'Réclamations',
+    legal_back:"Retour à l'accueil",
+    legal_mentions_title:'Mentions légales',
+    legal_mentions_body:`
+      <h3>Éditeur du site</h3>
+      <p>Preventisassur, SASU au capital social de 1 000 €, immatriculée au RCS de Paris sous le numéro 938 236 825, dont le siège social est situé 229 rue Saint-Honoré, 75001 Paris, France.</p>
+      <p>Directeur de la publication : Idrissi Yazami Taoufik.</p>
+      <h3>Activité réglementée</h3>
+      <p>Preventisassur est un courtier en assurance (COA), immatriculé à l'ORIAS sous le numéro 25 001 045 (<a href="https://www.orias.fr" target="_blank" rel="noopener">www.orias.fr</a>), sous le contrôle de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR) — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09.</p>
+      <h3>Hébergement</h3>
+      <p>Ce site est hébergé par Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.</p>
+      <h3>Médiation de l'assurance</h3>
+      <p>En cas de litige non résolu avec Preventisassur, vous pouvez saisir gratuitement le médiateur de l'assurance : La Médiation de l'Assurance, TSA 50110, 75441 Paris Cedex 09 — <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">www.mediation-assurance.org</a>.</p>
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble des contenus de ce site (textes, logos, mise en page) est la propriété de Preventisassur, sauf mention contraire, et ne peut être reproduit sans autorisation préalable.</p>
+    `,
+    legal_privacy_title:'Politique de confidentialité',
+    legal_privacy_body:`
+      <h3>Responsable du traitement</h3>
+      <p>Preventisassur, 229 rue Saint-Honoré, 75001 Paris, est responsable du traitement des données collectées via ce site.</p>
+      <h3>Données collectées</h3>
+      <p>Lors d'une demande de devis, nous collectons : nom, prénom, téléphone, e-mail, adresse, code postal, la composition du foyer concerné par la demande, et une description libre du besoin.</p>
+      <h3>Finalité et base légale</h3>
+      <p>Ces données sont utilisées exclusivement pour vous mettre en relation avec un conseiller Preventisassur et établir un devis d'assurance, sur la base du consentement que vous donnez en cochant la case dédiée du formulaire.</p>
+      <h3>Destinataires</h3>
+      <p>Vos données sont accessibles à l'équipe de conseillers de Preventisassur en charge de votre dossier. Elles peuvent être transmises aux compagnies d'assurance partenaires strictement dans le cadre de l'établissement de votre devis.</p>
+      <h3>Durée de conservation</h3>
+      <p>Vos données sont conservées le temps nécessaire au traitement de votre demande, puis archivées conformément aux obligations légales applicables au courtage en assurance.</p>
+      <h3>Cookies</h3>
+      <p>Le site n'utilise aucun cookie de mesure d'audience ou publicitaire. Un unique cookie technique, strictement nécessaire, est déposé lors de la connexion à l'espace employés pour maintenir la session de travail.</p>
+      <h3>Vos droits</h3>
+      <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition sur vos données. Vous pouvez exercer ces droits en contactant Preventisassur, et introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>) si vous estimez que vos droits ne sont pas respectés.</p>
+    `,
+    legal_complaints_title:'Réclamations',
+    legal_complaints_body:`
+      <h3>Comment déposer une réclamation</h3>
+      <p>Si vous n'êtes pas satisfait du traitement de votre dossier, vous pouvez adresser votre réclamation directement à votre conseiller Preventisassur, ou par écrit au siège social : 229 rue Saint-Honoré, 75001 Paris.</p>
+      <h3>Délais de traitement</h3>
+      <p>Un accusé de réception vous sera adressé sous 10 jours ouvrables, et une réponse sur le fond sous 2 mois maximum à compter de la réception de votre réclamation, conformément aux recommandations de l'ACPR.</p>
+      <h3>En cas de désaccord persistant</h3>
+      <p>Si la réponse apportée ne vous satisfait pas, vous pouvez saisir gratuitement le médiateur de l'assurance : La Médiation de l'Assurance, TSA 50110, 75441 Paris Cedex 09 — <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">www.mediation-assurance.org</a>.</p>
+      <h3>Autorité de contrôle</h3>
+      <p>Preventisassur est un courtier en assurance inscrit à l'ORIAS (n°25 001 045) et contrôlé par l'ACPR — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09.</p>
+    `,
     foot_rights:'© 2026 Preventisassur. Tous droits réservés.', foot_orias:'SIREN 938 236 825 · 229 rue Saint-Honoré, 75001 Paris · ORIAS n°25 001 045, sous contrôle de l\'ACPR',
 
     /* quote form */
@@ -86,7 +129,7 @@ const TR = {
     login_title:'Espace employés', login_lead:'Connectez-vous pour accéder aux dossiers clients et à votre espace de travail.',
     login_visual_title:'Un espace pensé pour le suivi de dossier', login_visual_lead:'Attribution des demandes, suivi de statut, dossier de travail par conseiller.',
     f_username:'Identifiant', f_password:'Mot de passe', btn_login:'Se connecter', login_error:'Identifiant ou mot de passe incorrect.',
-    demo_hint:'Comptes de démonstration — Direction : admin / admin2026 · Conseiller : agent1 / agent2026',
+    show_password:'Afficher', hide_password:'Masquer',
 
     /* dashboard */
     dash_leads:'Demandes', dash_team:'Équipe', logout:'Déconnexion',
@@ -106,10 +149,24 @@ const TR = {
     f_title:'Poste (optionnel)', f_title_ph:'Ex : Conseiller IARD', btn_add:'Ajouter', btn_remove:'Retirer', btn_cancel:'Annuler',
     dash_chat:'Messagerie', chat_placeholder:'Écrire un message à l\'équipe…', chat_send:'Envoyer',
     chat_empty:'Aucun message pour le moment. Soyez le premier à écrire à l\'équipe !', chat_you:'Vous',
+    change_password:'Mot de passe', pwd_modal_title:'Changer mon mot de passe',
+    f_current_password:'Mot de passe actuel', f_new_password:'Nouveau mot de passe', f_confirm_password:'Confirmer le nouveau mot de passe',
+    pwd_mismatch:'Les deux mots de passe ne correspondent pas.', pwd_success:'Mot de passe mis à jour avec succès.', btn_save:'Enregistrer',
+    remember_me:'Rester connecté', login_pending:'Ta demande de connexion est en attente de validation par un administrateur.',
+    devices_pending_title:'Demandes de connexion en attente', devices_none_pending:'Aucune demande en attente.',
+    devices_approved_title:'Appareils approuvés', devices_approved_since:'depuis le',
+    device_approve:'Approuver', device_reject:'Refuser', device_revoke:'Révoquer',
+    device_approved:'Appareil approuvé.', device_rejected:'Appareil retiré.',
+        device_reject_confirm:'Retirer cet appareil ? La personne devra refaire une demande pour se reconnecter depuis celui-ci.',
+    btn_reset_password:'Réinitialiser', reset_password_confirm:'Générer un nouveau mot de passe temporaire pour {name} ? Son mot de passe actuel cessera immédiatement de fonctionner.',
+    temp_password_title:'Nouveau mot de passe temporaire', temp_password_lead:'Communique ce mot de passe à {name} — il ne sera plus jamais affiché.',
+    btn_copy:'Copier', copied:'Copié !', btn_close:'Fermer',
+    notif_new_lead_one:'Nouvelle demande reçue : {ref}', notif_new_lead_many:'{n} nouvelles demandes reçues',
+    notif_assigned_one:'Un dossier vous a été attribué : {ref}', notif_assigned_many:'{n} dossiers vous ont été attribués',
   },
   en:{
     nav_home:'Home', nav_services:'Cover', nav_trust:'The firm', nav_contact:'Contact',
-    nav_client:'Get a quote', nav_staff:'Staff portal', learn_more:'Learn more',    nav_client:'Get a quote', nav_staff:'Staff portal', learn_more:'Learn more', show_password:'Show', hide_password:'Hide',
+    nav_client:'Get a quote', nav_staff:'Staff portal', learn_more:'Learn more',
     hero_eyebrow:'Independent brokerage firm',
     hero_title:'Every policy starts with a well-kept file.',
     hero_lead:'Preventisassur compares, negotiates and follows your insurance file — health, home, motor, motorcycle, professional group cover, IARD or ten-year builder liability — from the first contact to the signed policy.',
@@ -147,6 +204,47 @@ const TR = {
     foot_about:'Preventisassur is an independent insurance brokerage, specialised in IARD and ten-year builder liability.',
     foot_nav:'Navigation', foot_staff:'Staff access', foot_staff_link:'Staff login',
     foot_legal:'Information', foot_legal1:'Legal notice', foot_legal2:'Privacy policy', foot_legal3:'Complaints',
+    legal_back:'Back to home',
+    legal_mentions_title:'Legal notice',
+    legal_mentions_body:`
+      <h3>Site publisher</h3>
+      <p>Preventisassur, a French SASU with share capital of €1,000, registered with the Paris Trade and Companies Register under number 938 236 825, with registered office at 229 rue Saint-Honoré, 75001 Paris, France.</p>
+      <p>Publication director: Idrissi Yazami Taoufik.</p>
+      <h3>Regulated activity</h3>
+      <p>Preventisassur is an insurance broker (COA), registered with ORIAS under number 25 001 045 (<a href="https://www.orias.fr" target="_blank" rel="noopener">www.orias.fr</a>), supervised by the French Prudential Supervision and Resolution Authority (ACPR) — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09.</p>
+      <h3>Hosting</h3>
+      <p>This site is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.</p>
+      <h3>Insurance mediation</h3>
+      <p>In case of an unresolved dispute with Preventisassur, you may refer the matter free of charge to the French insurance mediator: La Médiation de l'Assurance, TSA 50110, 75441 Paris Cedex 09 — <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">www.mediation-assurance.org</a>.</p>
+    `,
+    legal_privacy_title:'Privacy policy',
+    legal_privacy_body:`
+      <h3>Data controller</h3>
+      <p>Preventisassur, 229 rue Saint-Honoré, 75001 Paris, is the controller of the data collected through this site.</p>
+      <h3>Data collected</h3>
+      <p>When requesting a quote, we collect: last name, first name, phone, e-mail, address, postal code, the household composition relevant to the request, and a free-text description of your needs.</p>
+      <h3>Purpose and legal basis</h3>
+      <p>This data is used solely to put you in touch with a Preventisassur advisor and prepare an insurance quote, based on the consent you give by ticking the dedicated box on the form.</p>
+      <h3>Recipients</h3>
+      <p>Your data is accessible to the Preventisassur advisors handling your file, and may be shared with partner insurers strictly for the purpose of preparing your quote.</p>
+      <h3>Retention period</h3>
+      <p>Your data is kept for as long as necessary to process your request, then archived in line with the legal obligations applicable to insurance brokerage.</p>
+      <h3>Cookies</h3>
+      <p>This site does not use any analytics or advertising cookies. A single strictly necessary technical cookie is set when signing in to the staff portal, to keep the work session active.</p>
+      <h3>Your rights</h3>
+      <p>Under the GDPR, you have the right to access, rectify, erase, restrict, and object to the processing of your data. You may exercise these rights by contacting Preventisassur, and lodge a complaint with the CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>) if you believe your rights are not respected.</p>
+    `,
+    legal_complaints_title:'Complaints',
+    legal_complaints_body:`
+      <h3>How to file a complaint</h3>
+      <p>If you are not satisfied with how your file was handled, you may contact your Preventisassur advisor directly, or write to our registered office: 229 rue Saint-Honoré, 75001 Paris, France.</p>
+      <h3>Processing times</h3>
+      <p>An acknowledgement will be sent within 10 business days, and a substantive response within 2 months at most from receipt of your complaint, in line with ACPR recommendations.</p>
+      <h3>If you remain unsatisfied</h3>
+      <p>You may refer the matter free of charge to the French insurance mediator: La Médiation de l'Assurance, TSA 50110, 75441 Paris Cedex 09 — <a href="https://www.mediation-assurance.org" target="_blank" rel="noopener">www.mediation-assurance.org</a>.</p>
+      <h3>Supervisory authority</h3>
+      <p>Preventisassur is an insurance broker registered with ORIAS (no. 25 001 045) and supervised by the ACPR — 4 place de Budapest, CS 92459, 75436 Paris Cedex 09.</p>
+    `,
     foot_rights:'© 2026 Preventisassur. All rights reserved.', foot_orias:'SIREN 938 236 825 · 229 rue Saint-Honoré, 75001 Paris, France · ORIAS no. 25 001 045, regulated by the ACPR',
 
     q_step1:'Cover for', q_step2:'Guarantee', q_step3:'Your details', q_step4:'Confirmation',
@@ -175,7 +273,6 @@ const TR = {
     login_title:'Staff portal', login_lead:'Sign in to access client files and your workspace.',
     login_visual_title:'A workspace built for file follow-up', login_visual_lead:'Assign requests, track status, review each advisor\'s workload.',
     f_username:'Username', f_password:'Password', btn_login:'Sign in', login_error:'Incorrect username or password.',
-    demo_hint:'Demo accounts — Management: admin / admin2026 · Advisor: agent1 / agent2026',
 
     dash_leads:'Requests', dash_team:'Team', logout:'Sign out',
     dash_all_status:'All statuses', dash_all_service:'All guarantees',
@@ -194,6 +291,21 @@ const TR = {
     f_title:'Job title (optional)', f_title_ph:'E.g. IARD advisor', btn_add:'Add', btn_remove:'Remove', btn_cancel:'Cancel',
     dash_chat:'Team chat', chat_placeholder:'Write a message to the team…', chat_send:'Send',
     chat_empty:'No messages yet. Be the first to write to the team!', chat_you:'You',
+    change_password:'Password', pwd_modal_title:'Change my password',
+    show_password:'Show', hide_password:'Hide',
+    f_current_password:'Current password', f_new_password:'New password', f_confirm_password:'Confirm new password',
+    pwd_mismatch:'The two passwords do not match.', pwd_success:'Password updated successfully.', btn_save:'Save',
+    remember_me:'Stay signed in', login_pending:'Your sign-in request is awaiting approval from an administrator.',
+    devices_pending_title:'Pending sign-in requests', devices_none_pending:'No pending requests.',
+    devices_approved_title:'Approved devices', devices_approved_since:'since',
+    device_approve:'Approve', device_reject:'Reject', device_revoke:'Revoke',
+    device_approved:'Device approved.', device_rejected:'Device removed.',
+        device_reject_confirm:"Remove this device? The person will need to request access again to sign in from it.",
+    btn_reset_password:'Reset password', reset_password_confirm:"Generate a new temporary password for {name}? Their current password will stop working immediately.",
+    temp_password_title:'New temporary password', temp_password_lead:'Share this password with {name} — it will never be shown again.',
+    btn_copy:'Copy', copied:'Copied!', btn_close:'Close',
+    notif_new_lead_one:'New request received: {ref}', notif_new_lead_many:'{n} new requests received',
+    notif_assigned_one:'A file was assigned to you: {ref}', notif_assigned_many:'{n} files were assigned to you',
   }
 };
 function L(k){ return (TR[state.lang] && TR[state.lang][k]) || TR.fr[k] || k; }
@@ -209,13 +321,15 @@ let state = {
   user:null,
   leads:[],
   employees:[],
+  devices:[],
   leadsLoaded:false,
   sessionChecked:false,
   quote:{ step:1, coverageType:null, service:null },
   memberSeq:0,
   dash:{ tab:'leads', filterStatus:'all', filterService:'all', showAddEmployee:false },
-  chat:{ messages:[], loaded:false, pollHandle:null, draft:'', inputFocused:false },
-  leadsPollHandle:null,  activeLeadId:null,
+    chat:{ messages:[], loaded:false, pollHandle:null, draft:'', inputFocused:false },
+  leadsPollHandle:null,
+  activeLeadId:null,
   loginError:false,
   toast:null,
 };
@@ -235,9 +349,10 @@ async function checkSession(){
     const data = await api('/auth/me');
     state.user = data.user;
     if(state.user){
-      await Promise.all([loadLeads(), state.user.role==='admin' ? loadEmployees() : Promise.resolve()]);
-      if(state.view==='home' || state.view==='login'){ state.view = 'dashboard'; }
-      startLeadsPolling();    }
+      await Promise.all([loadLeads(), state.user.role==='admin' ? Promise.all([loadEmployees(), loadDevices()]) : Promise.resolve()]);
+            if(state.view==='home' || state.view==='login'){ state.view = 'dashboard'; }
+      startLeadsPolling();
+    }
   }catch(e){ state.user = null; }
   state.sessionChecked = true;
   render();
@@ -246,7 +361,28 @@ async function checkSession(){
 async function loadLeads(){
   try{
     const data = await api('/leads');
-    state.leads = data.leads || [];
+    const newLeads = data.leads || [];
+    if(state.leadsLoaded && state.user){
+      const oldById = {};
+      state.leads.forEach(l => { oldById[l.id] = l; });
+      const isAdmin = state.user.role === 'admin';
+      const freshRefs = [];
+      const assignedToMeRefs = [];
+      newLeads.forEach(l => {
+        const old = oldById[l.id];
+        if(!old){
+          if(isAdmin) freshRefs.push(l.ref);
+          else if(l.assignedTo === state.user.id) assignedToMeRefs.push(l.ref);
+        } else if(!isAdmin && old.assignedTo !== state.user.id && l.assignedTo === state.user.id){
+          assignedToMeRefs.push(l.ref);
+        }
+      });
+      if(freshRefs.length===1) showToast(L('notif_new_lead_one').replace('{ref}', freshRefs[0]));
+      else if(freshRefs.length>1) showToast(L('notif_new_lead_many').replace('{n}', freshRefs.length));
+      if(assignedToMeRefs.length===1) showToast(L('notif_assigned_one').replace('{ref}', assignedToMeRefs[0]));
+      else if(assignedToMeRefs.length>1) showToast(L('notif_assigned_many').replace('{n}', assignedToMeRefs.length));
+    }
+    state.leads = newLeads;
   }catch(e){ state.leads = []; }
   state.leadsLoaded = true;
   render();
@@ -257,6 +393,28 @@ async function loadEmployees(){
     state.employees = data.employees || [];
   }catch(e){ state.employees = []; }
   render();
+}
+async function loadDevices(){
+  try{
+    const data = await api('/devices');
+    state.devices = data.devices || [];
+  }catch(e){ state.devices = []; }
+  render();
+}
+async function approveDevice(id){
+  try{
+    await api(`/devices/${id}/approve`, { method:'PATCH' });
+    await loadDevices();
+    showToast(L('device_approved'));
+  }catch(err){ showToast(typeof err==='string' ? err : 'Erreur.'); }
+}
+async function rejectDevice(id){
+  if(!window.confirm(L('device_reject_confirm'))) return;
+  try{
+    await api(`/devices/${id}`, { method:'DELETE' });
+    await loadDevices();
+    showToast(L('device_rejected'));
+  }catch(err){ showToast(typeof err==='string' ? err : 'Erreur.'); }
 }
 
 function showToast(msg){
@@ -312,6 +470,7 @@ function escapeHtml(s){
 function setLang(l){ state.lang = l; render(); }
 function goView(v){ window.scrollTo(0,0); state.view = v; render(); }
 function goHome(){ goView('home'); }
+function goLegal(page){ state.legalPage = page; goView('legal'); }
 function goQuote(){ state.quote = {step:1, coverageType:null, service:null}; goView('quote'); }
 function goServiceInfo(key){ state.serviceInfoKey = key; goView('serviceInfo'); }
 function goQuoteForService(key){ state.quote = {step:1, coverageType:null, service:key}; goView('quote'); }
@@ -457,15 +616,35 @@ async function attemptLogin(e){
   e.preventDefault();
   const u = document.getElementById('loginUser').value.trim();
   const p = document.getElementById('loginPass').value;
+  const rememberMe = document.getElementById('rememberMe') ? document.getElementById('rememberMe').checked : false;
+  state.loginPending = false;
+  state.loginError = false;
   try{
-    const data = await api('/auth/login', { method:'POST', body: JSON.stringify({ username:u, password:p }) });
+    const res = await fetch(API+'/auth/login', {
+      method:'POST', credentials:'include', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ username:u, password:p, rememberMe }),
+    });
+    let data = null;
+    try{ data = await res.json(); }catch(e){}
+    if(!res.ok){
+      if(data && data.pending){
+        state.loginPending = true;
+        state.loginPendingMessage = data.error;
+      } else {
+        state.loginError = true;
+        state.loginErrorMessage = (data && data.error) || L('login_error');
+      }
+      render();
+      return;
+    }
     state.user = data.user;
-    state.loginError = false;
     await loadLeads();
-    if(state.user.role==='admin'){ await loadEmployees(); }
-    goView('dashboard');
-    startLeadsPolling();  } catch(err){
+    if(state.user.role==='admin'){ await Promise.all([loadEmployees(), loadDevices()]); }
+        goView('dashboard');
+    startLeadsPolling();
+  } catch(err){
     state.loginError = true;
+    state.loginErrorMessage = L('login_error');
     render();
   }
 }
@@ -492,6 +671,7 @@ function startLeadsPolling(){
 function stopLeadsPolling(){
   if(state.leadsPollHandle){ clearInterval(state.leadsPollHandle); state.leadsPollHandle = null; }
 }
+
 function startChatPolling(){
   if(state.chat.pollHandle) return;
   loadMessages();
@@ -516,12 +696,25 @@ async function sendChatMessage(){
     showToast(typeof err==='string' ? err : "Erreur lors de l'envoi du message.");
   }
 }
+
 function togglePasswordVisibility(id, btn){
   const input = document.getElementById(id);
   if(!input) return;
   if(input.type === 'password'){ input.type = 'text'; btn.textContent = L('hide_password'); }
   else { input.type = 'password'; btn.textContent = L('show_password'); }
 }
+async function resetEmployeePassword(id, name){
+  if(!window.confirm(L('reset_password_confirm').replace('{name}', name))) return;
+  try{
+    const data = await api(`/employees/${id}/reset-password`, { method:'PATCH' });
+    state.tempPasswordInfo = { name, tempPassword: data.tempPassword };
+    render();
+  }catch(err){
+    showToast(typeof err==='string' ? err : 'Erreur lors de la réinitialisation.');
+  }
+}
+
+function toggleAddEmployee(show){
 function toggleAddEmployee(show){ state.dash.showAddEmployee = show; render(); }
 
 async function submitNewEmployee(){
@@ -630,6 +823,12 @@ function footerHtml(){
         <div>
           <h4>${L('foot_staff')}</h4>
           <a onclick="goStaffLogin()">${L('foot_staff_link')}</a>
+        </div>
+        <div>
+          <h4>${L('foot_legal')}</h4>
+          <a onclick="goLegal('mentions')">${L('foot_legal1')}</a>
+          <a onclick="goLegal('privacy')">${L('foot_legal2')}</a>
+          <a onclick="goLegal('complaints')">${L('foot_legal3')}</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -785,6 +984,27 @@ function viewServiceInfo(){
   `;
 }
 
+/* ============================= RENDER: LEGAL PAGES ============================= */
+const LEGAL_META = {
+  mentions:  { title:'legal_mentions_title',  body:'legal_mentions_body' },
+  privacy:   { title:'legal_privacy_title',   body:'legal_privacy_body' },
+  complaints:{ title:'legal_complaints_title', body:'legal_complaints_body' },
+};
+function viewLegal(){
+  const meta = LEGAL_META[state.legalPage] || LEGAL_META.mentions;
+  return `
+  ${headerHtml()}
+  <section style="padding:56px 0 90px;">
+    <div class="wrap" style="max-width:760px;">
+      <button class="btn-ghost" style="margin-bottom:24px;" onclick="goHome()">← ${L('legal_back')}</button>
+      <h1 style="font-size:clamp(26px,3.4vw,34px);margin-bottom:26px;">${L(meta.title)}</h1>
+      <div class="legal-body">${L(meta.body)}</div>
+    </div>
+  </section>
+  ${footerHtml()}
+  `;
+}
+
 /* ============================= RENDER: QUOTE FLOW ============================= */
 function stepperHtml(current){
   const labels = [L('q_step1'),L('q_step2'),L('q_step3'),L('q_step4')];
@@ -910,15 +1130,19 @@ function viewLogin(){
         <div class="eyebrow">${L('nav_staff')}</div>
         <h2>${L('login_title')}</h2>
         <p style="margin-bottom:22px;">${L('login_lead')}</p>
-        
-        ${state.loginError ? `<div class="hint" style="color:#8C3B2E;margin-bottom:14px;">${L('login_error')}</div>` : ''}
+        ${state.loginPending ? `<div class="hint" style="color:var(--gold);margin-bottom:14px;background:var(--brick-tint);padding:12px 14px;border-radius:6px;">${state.loginPendingMessage || L('login_pending')}</div>` : ''}
+        ${state.loginError ? `<div class="hint" style="color:#8C3B2E;margin-bottom:14px;">${state.loginErrorMessage || L('login_error')}</div>` : ''}
         <form onsubmit="attemptLogin(event)">
           <div class="field"><label>${L('f_username')}</label><input type="text" id="loginUser" required></div>
-                    <div class="field"><label>${L('f_password')}</label>
-            <div style="position:relative;">
-              <input type="password" id="loginPass" required style="padding-right:74px;">
-              <button type="button" class="btn-ghost" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;padding:4px 6px;" onclick="togglePasswordVisibility('loginPass', this)">${L('show_password')}</button>
+          <div class="field"><label>${L('f_password')}</label>
+            <div class="password-field">
+              <input type="password" id="loginPass" required>
+              <button type="button" class="btn-ghost password-toggle" onclick="togglePasswordVisibility('loginPass', this)">${L('show_password')}</button>
             </div>
+          </div>
+          <div class="remember-row">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe" style="margin:0;text-transform:none;font-family:inherit;letter-spacing:normal;font-weight:400;">${L('remember_me')}</label>
           </div>
           <button class="btn btn-primary btn-block" type="submit">${L('btn_login')}</button>
         </form>
@@ -932,6 +1156,65 @@ function viewLogin(){
 /* ============================= RENDER: DASHBOARD ============================= */
 function statusBadge(s){ return `<span class="badge badge-${s}">${L('st_'+s)}</span>`; }
 
+function passwordModal(){
+  return `
+  <div class="modal-bg" onclick="if(event.target===this) closePasswordModal()">
+    <div class="modal" style="max-width:420px;">
+      <div class="modal-head">
+        <h3 style="margin:0;">${L('pwd_modal_title')}</h3>
+        <button class="modal-close" onclick="closePasswordModal()">&times;</button>
+      </div>
+      <div class="field"><label>${L('f_current_password')}</label><input type="password" id="pwd_current" autocomplete="current-password"></div>
+      <div class="field"><label>${L('f_new_password')}</label><input type="password" id="pwd_new" autocomplete="new-password"></div>
+      <div class="field"><label>${L('f_confirm_password')}</label><input type="password" id="pwd_confirm" autocomplete="new-password"></div>
+      <button class="btn btn-primary btn-block" onclick="submitPasswordChange()">${L('btn_save')}</button>
+    </div>
+  </div>`;
+}
+function openPasswordModal(){ state.showPasswordModal = true; render(); }
+function closePasswordModal(){ state.showPasswordModal = false; render(); }
+async function submitPasswordChange(){
+  const currentPassword = (document.getElementById('pwd_current')||{}).value || '';
+  const newPassword = (document.getElementById('pwd_new')||{}).value || '';
+  const confirmPassword = (document.getElementById('pwd_confirm')||{}).value || '';
+  if(!currentPassword || !newPassword || !confirmPassword){ showToast(L('err_required')); return; }
+  if(newPassword !== confirmPassword){ showToast(L('pwd_mismatch')); return; }
+  try{
+    await api('/auth/password', { method:'PATCH', body: JSON.stringify({ currentPassword, newPassword }) });
+    state.showPasswordModal = false;
+    showToast(L('pwd_success'));
+  }catch(err){
+    showToast(typeof err==='string' ? err : 'Erreur lors du changement de mot de passe.');
+  }
+}
+function tempPasswordModal(){
+  const info = state.tempPasswordInfo;
+  if(!info) return '';
+  return `
+  <div class="modal-bg">
+    <div class="modal" style="max-width:420px;">
+      <div class="modal-head">
+        <h3 style="margin:0;">${L('temp_password_title')}</h3>
+      </div>
+      <p style="margin-bottom:16px;">${L('temp_password_lead').replace('{name}', escapeHtml(info.name))}</p>
+      <div style="display:flex;gap:8px;margin-bottom:20px;">
+        <input type="text" readonly value="${escapeHtml(info.tempPassword)}" id="tempPasswordField" style="font-family:var(--font-mono);font-size:16px;letter-spacing:.05em;flex:1;">
+        <button class="btn btn-outline btn-sm" onclick="copyTempPassword()">${L('btn_copy')}</button>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="closeTempPasswordModal()">${L('btn_close')}</button>
+    </div>
+  </div>`;
+}
+function copyTempPassword(){
+  const field = document.getElementById('tempPasswordField');
+  if(!field) return;
+  field.select();
+  try{ navigator.clipboard.writeText(field.value); showToast(L('copied')); }
+  catch(e){ document.execCommand('copy'); showToast(L('copied')); }
+}
+function closeTempPasswordModal(){ state.tempPasswordInfo = null; render(); }
+
+function leadDetailModal(){
 function leadDetailModal(){
   const lead = state.leads.find(l=>l.id===state.activeLeadId);
   if(!lead) return '';
@@ -1030,6 +1313,37 @@ function viewDashboard(){
   let teamHtml = '';
   if(isAdmin){
     const agents = state.employees.filter(e=>e.role==='agent');
+    const pendingDevices = state.devices.filter(d=>!d.approved);
+    const approvedDevices = state.devices.filter(d=>d.approved);
+    const devicesHtml = `
+      <h3 style="margin-bottom:16px;">${L('devices_pending_title')}</h3>
+      ${!pendingDevices.length ? `<p class="hint" style="margin-bottom:24px;">${L('devices_none_pending')}</p>` : pendingDevices.map(d=>`
+        <div class="device-row pending">
+          <div class="device-info">
+            <b>${escapeHtml(d.employeeName)}</b>
+            <span>${escapeHtml(d.label || '')} · ${fmtDate(d.requestedAt)}</span>
+          </div>
+          <div class="device-actions">
+            <button class="btn btn-primary btn-sm" onclick="approveDevice(${d.id})">${L('device_approve')}</button>
+            <button class="btn btn-outline btn-sm" onclick="rejectDevice(${d.id})">${L('device_reject')}</button>
+          </div>
+        </div>
+      `).join('')}
+      ${approvedDevices.length ? `
+        <h3 style="margin:28px 0 16px;">${L('devices_approved_title')}</h3>
+        ${approvedDevices.map(d=>`
+          <div class="device-row">
+            <div class="device-info">
+              <b>${escapeHtml(d.employeeName)}</b>
+              <span>${escapeHtml(d.label || '')} · ${L('devices_approved_since')} ${fmtDate(d.approvedAt)}</span>
+            </div>
+            <div class="device-actions">
+              <button class="btn-ghost" style="font-size:12px;" onclick="rejectDevice(${d.id})">${L('device_revoke')}</button>
+            </div>
+          </div>
+        `).join('')}
+      ` : ''}
+    `;
     const addFormHtml = state.dash.showAddEmployee ? `
       <div class="card" style="padding:22px;margin-bottom:24px;">
         <h4 style="margin-bottom:16px;">${L('team_add_title')}</h4>
@@ -1038,10 +1352,10 @@ function viewDashboard(){
           <div class="field"><label>${L('f_username')}</label><input type="text" id="new_emp_username" autocomplete="off"></div>
         </div>
         <div class="field-row">
-                    <div class="field"><label>${L('f_password')}</label>
-            <div style="position:relative;">
-              <input type="password" id="new_emp_password" autocomplete="new-password" style="padding-right:74px;">
-              <button type="button" class="btn-ghost" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;padding:4px 6px;" onclick="togglePasswordVisibility('new_emp_password', this)">${L('show_password')}</button>
+          <div class="field"><label>${L('f_password')}</label>
+            <div class="password-field">
+              <input type="password" id="new_emp_password" autocomplete="new-password">
+              <button type="button" class="btn-ghost password-toggle" onclick="togglePasswordVisibility('new_emp_password', this)">${L('show_password')}</button>
             </div>
           </div>
           <div class="field"><label>${L('f_role')}</label>
@@ -1062,6 +1376,7 @@ function viewDashboard(){
     `;
 
     teamHtml = `
+      ${devicesHtml}
       ${addFormHtml}
       <h3 style="margin-bottom:16px;">${L('team_title')}</h3>
       <div class="team-grid">
@@ -1074,6 +1389,7 @@ function viewDashboard(){
           <div class="team-card">
             <div style="display:flex;justify-content:space-between;align-items:flex-start;">
               <div class="avatar">${a.name.split(' ').map(w=>w[0]).join('')}</div>
+             <button class="btn-ghost" style="font-size:12px;" onclick="resetEmployeePassword(${a.id}, '${a.name.replace(/'/g,"\\'")}')">${L('btn_reset_password')}</button>
               <button class="btn-ghost" style="font-size:12px;" onclick="deleteEmployee(${a.id}, '${a.name.replace(/'/g,"\\'")}')">${L('btn_remove')}</button>
             </div>
             <h4 style="margin:10px 0 2px;font-size:17px;">${a.name}</h4>
@@ -1156,6 +1472,7 @@ function viewDashboard(){
           </div>
           <div class="avatar">${u.name.split(' ').map(w=>w[0]).join('')}</div>
           <div><div class="name">${u.name}</div><div class="role">${u.title || ''}</div></div>
+          <button class="btn-ghost" style="color:#fff;" onclick="openPasswordModal()">${L('change_password')}</button>
           <button class="btn btn-outline-light btn-sm" onclick="logout()">${L('logout')}</button>
         </div>
       </div>
@@ -1170,6 +1487,8 @@ function viewDashboard(){
     </div>
   </div>
   ${state.activeLeadId ? leadDetailModal() : ''}
+    ${state.showPasswordModal ? passwordModal() : ''}
+  ${state.tempPasswordInfo ? tempPasswordModal() : ''}
   `;
 }
 
@@ -1178,9 +1497,9 @@ function render(){
   const app = document.getElementById('app');
 
   // Preserve focus and cursor position across auto-refreshes, whatever field
-  // the user happens to be typing in (chat box, add-employee form, etc.) —
-  // checking this AFTER replacing the DOM is unreliable, since removing a
-  // focused element fires its blur handler mid-replacement.
+  // the user happens to be typing in (chat box, add-employee form, password
+  // fields, etc.) — checking this AFTER replacing the DOM is unreliable,
+  // since removing a focused element fires its blur handler mid-replacement.
   const prevActive = document.activeElement;
   const prevId = prevActive && prevActive.id ? prevActive.id : null;
   const isTextInput = prevActive && (prevActive.tagName === 'INPUT' || prevActive.tagName === 'TEXTAREA');
@@ -1189,6 +1508,7 @@ function render(){
 
   let html = '';
   if(state.view==='home') html = viewHome();
+  else if(state.view==='legal') html = viewLegal();
   else if(state.view==='serviceInfo') html = viewServiceInfo();
   else if(state.view==='quote') html = viewQuote();
   else if(state.view==='login') html = viewLogin();

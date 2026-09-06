@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const rateLimit = require('express-rate-limit');
 const pool = require('../db');
 const { signToken, verifyToken } = require('../utils/jwt');
+const { requireAuth } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -68,6 +69,32 @@ router.get('/me', async (req, res) => {
     res.json({ user: toPublicEmployee(rows[0]) });
   } catch (e) {
     res.json({ user: null });
+  }
+});
+
+// PATCH /api/auth/password — un employé change son propre mot de passe (doit être connecté).
+router.patch('/password', requireAuth, async (req, res) => {
+  const { currentPassword, newPassword } = req.body || {};
+  if (!currentPassword || !newPassword) {
+    return res.status(400).json({ error: 'Mot de passe actuel et nouveau mot de passe requis.' });
+  }
+  if (String(newPassword).length < 6) {
+    return res.status(400).json({ error: 'Le nouveau mot de passe doit contenir au moins 6 caractères.' });
+  }
+  try {
+    const { rows } = await pool.query('SELECT * FROM employees WHERE id = $1', [req.employee.id]);
+    const emp = rows[0];
+    if (!emp) return res.status(404).json({ error: 'Compte introuvable.' });
+
+    const ok = await bcrypt.compare(currentPassword, emp.password_hash);
+    if (!ok) return res.status(401).json({ error: 'Mot de passe actuel incorrect.' });
+
+    const hash = await bcrypt.hash(newPassword, 12);
+    await pool.query('UPDATE employees SET password_hash = $1 WHERE id = $2', [hash, emp.id]);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Erreur serveur.' });
   }
 });
 

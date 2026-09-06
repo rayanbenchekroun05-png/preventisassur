@@ -2,12 +2,16 @@ const express = require('express');
 const rateLimit = require('express-rate-limit');
 const pool = require('../db');
 const { requireAuth, requireAdmin } = require('../middleware/auth');
+const { sendMail } = require('../utils/email');
 
 const router = express.Router();
 
 const COVERAGE_TYPES = ['seul', 'enfants', 'epouse', 'famille'];
 const SERVICES = ['iard', 'decennale', 'auto', 'personnes'];
 const STATUSES = ['nouveau', 'assigne', 'contacte', 'clos'];
+
+const COVERAGE_LABELS = { seul: 'Seul(e)', enfants: 'Avec enfants', epouse: 'Avec conjoint(e)', famille: 'Famille entière' };
+const SERVICE_LABELS = { iard: 'IARD', decennale: 'RC Décennale', auto: 'Automobile', personnes: 'Assurance Santé' };
 
 const submitLimiter = rateLimit({
   windowMs: 60 * 60 * 1000,
@@ -47,6 +51,36 @@ function serializeLead(row, members) {
   };
 }
 
+async function sendClientConfirmation(lead) {
+  const html = `
+    <div style="font-family:sans-serif;color:#1B2430;max-width:520px;">
+      <h2 style="color:#10233A;">Votre demande a bien été reçue</h2>
+      <p>Bonjour ${lead.prenom},</p>
+      <p>Nous avons bien reçu votre demande de devis pour la garantie <strong>${SERVICE_LABELS[lead.service] || lead.service}</strong> (${COVERAGE_LABELS[lead.coverage_type] || lead.coverage_type}).</p>
+      <p>Un conseiller Preventisassur reviendra vers vous sous 48h.</p>
+      <p style="font-family:monospace;background:#F2F0E7;padding:10px 14px;border-radius:4px;display:inline-block;">Référence de dossier : <strong>${lead.ref}</strong></p>
+      <p style="margin-top:24px;font-size:13px;color:#5B6472;">Preventisassur — Cabinet de courtage en assurance indépendant.<br>Cet e-mail confirme l'utilisation de vos données pour votre demande de mise en relation, conformément au consentement donné lors de votre demande.</p>
+    </div>
+  `;
+  return sendMail({ to: lead.email, subject: `Votre demande de devis — Réf. ${lead.ref}`, html });
+}
+
+async function sendTeamNotification(lead) {
+  const to = process.env.ADMIN_NOTIFY_EMAIL;
+  if (!to) return; // notification interne optionnelle, tant que la variable n'est pas configurée
+  const html = `
+    <div style="font-family:sans-serif;color:#1B2430;max-width:520px;">
+      <h2 style="color:#10233A;">Nouvelle demande de devis</h2>
+      <p><strong>${lead.ref}</strong> — ${SERVICE_LABELS[lead.service] || lead.service} (${COVERAGE_LABELS[lead.coverage_type] || lead.coverage_type})</p>
+      <p>${lead.nom} ${lead.prenom} — ${lead.telephone} — ${lead.email}</p>
+      <p>${lead.adresse}, ${lead.code_postal}</p>
+      ${lead.message ? `<p style="font-style:italic;">« ${lead.message} »</p>` : ''}
+      <p style="margin-top:20px;"><a href="${process.env.SITE_URL || ''}" style="color:#8C3B2E;">Ouvrir l'espace employés →</a></p>
+    </div>
+  `;
+  return sendMail({ to, subject: `Nouvelle demande — ${lead.ref}`, html });
+}
+
 // POST /api/leads — formulaire public de demande de devis (aucune authentification requise)
 router.post('/', submitLimiter, async (req, res) => {
   const body = req.body || {};
@@ -84,6 +118,12 @@ router.post('/', submitLimiter, async (req, res) => {
     }
 
     await client.query('COMMIT');
+
+    // Les e-mails ne doivent jamais faire échouer la demande : on les envoie
+    // "en fire-and-forget", après avoir déjà répondu au client si besoin.
+    sendClientConfirmation(lead).catch(() => {});
+    sendTeamNotification(lead).catch(() => {});
+
     res.status(201).json({ lead: serializeLead(lead, insertedMembers) });
   } catch (err) {
     await client.query('ROLLBACK');
