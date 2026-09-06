@@ -714,7 +714,6 @@ async function resetEmployeePassword(id, name){
   }
 }
 
-function toggleAddEmployee(show){
 function toggleAddEmployee(show){ state.dash.showAddEmployee = show; render(); }
 
 async function submitNewEmployee(){
