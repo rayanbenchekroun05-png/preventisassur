@@ -1215,7 +1215,6 @@ function copyTempPassword(){
 function closeTempPasswordModal(){ state.tempPasswordInfo = null; render(); }
 
 function leadDetailModal(){
-function leadDetailModal(){
   const lead = state.leads.find(l=>l.id===state.activeLeadId);
   if(!lead) return '';
   const isAdmin = state.user.role==='admin';
